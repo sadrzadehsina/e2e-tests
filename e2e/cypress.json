@@ -1,0 +1,30 @@
+{
+  "projectId": "j2nh8a",
+  "baseUrl": "http://localhost",
+  "integrationFolder": "integration",
+  "testFiles": "**/*.spec.ts",
+  "pluginsFile": "plugins/index.js",
+  "supportFile": "support/index.js",
+  "fixturesFolder": "fixtures",
+  "downloadsFolder": "downloads",
+  "componentFolder": "component",
+  "screenshotsFolder": "ewe/screenshots",
+  "videosFolder": "videos",
+  "video": false,
+  "viewportHeight": 1000,
+  "viewportWidth": 1280,
+  "retries": {
+    "runMode": 1,
+    "openMode": 1
+  },
+  "env": {
+    "mobileViewportWidthBreakpoint": 414,
+    "coverage": false,
+    "codeCoverage": {
+      "url": "http://localhost/__coverage__"
+    }
+  },
+  "experimentalStudio": true,
+  "defaultCommandTimeout": 10000,
+  "pageLoadTimeout": 60000
+}
