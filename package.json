@@ -3,6 +3,8 @@
   "packageManager": "yarn@3.1.1",
   "workspaces": [
     "application",
-    "e2e"
+    "e2e",
+    "authentication",
+    "events"
   ]
 }
