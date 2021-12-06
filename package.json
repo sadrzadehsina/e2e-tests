@@ -5,6 +5,10 @@
     "application",
     "e2e",
     "authentication",
-    "events"
-  ]
+    "events",
+    "test-user-factory"
+  ],
+  "dependencies": {
+    "faker": "^5.5.3"
+  }
 }

@@ -1,23 +1,12 @@
 const express = require("express");
 const db = require("./db");
+const cors = require("cors");
+const faker = require("faker");
 
 const app = express();
 const port = 3000;
 
-const events = [
-  {
-    id: 1,
-    title: "Event 1",
-  },
-  {
-    id: 2,
-    title: "Event 2",
-  },
-  {
-    id: 3,
-    title: "Event 3",
-  },
-];
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("Events App");
@@ -27,11 +16,30 @@ app.get("/events", (req, res) => {
   db.serialize(() =>
     db.all("SELECT * from events", (error, events) => {
       if (error) {
-        console.log(error.message);
         res.status(500).json({ message: error.message });
       }
-      res.status(200).json({ data: events });
+      res.status(200).json(events);
     })
+  );
+});
+
+app.post("/events", (req, res) => {
+  const user = req.body.user;
+  db.run(
+    "INSERT INTO events(id, userId, title, description, address) VALUES(?, ?, ?, ?)",
+    [
+      faker.datatype.number(100000),
+      user,
+      faker.commerce.productName,
+      faker.commerce.productDescription,
+      faker.address.streetAddress,
+    ],
+    (error) => {
+      if (error) {
+        res.status(500).json({ message: error.message });
+      }
+      res.status(200);
+    }
   );
 });
 

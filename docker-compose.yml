@@ -1,0 +1,55 @@
+version: "3.7"
+
+services:
+  test-user-factory:
+    image: local_e2e_tests_nodeapp_test_user_factory
+    build:
+      context: ./test-user-factory
+      dockerfile: ./Dockerfile
+    container_name: local_e2e_tests_nodeapp_test_user_factory
+    ports:
+      - 3003:3000
+    networks:
+      - local_e2e_tests
+    depends_on:
+      - authentication
+
+  authentication:
+    image: local_e2e_tests_nodeapp_authentication
+    build:
+      context: ./authentication
+      dockerfile: ./Dockerfile
+    container_name: local_e2e_tests_nodeapp_authentication
+    ports:
+      - 3002:1337
+    networks:
+      - local_e2e_tests
+
+  events:
+    image: local_e2e_tests_nodeapp_events
+    build:
+      context: ./events
+      dockerfile: ./Dockerfile
+    container_name: local_e2e_tests_nodeapp_events
+    ports:
+      - 3001:3000
+    networks:
+      - local_e2e_tests
+
+  application:
+    image: local_e2e_tests_nodeapp_application
+    build:
+      context: ./application
+      dockerfile: ./Dockerfile
+    container_name: local_e2e_tests_nodeapp_application
+    networks:
+      - local_e2e_tests
+    ports:
+      - 3000:3000
+    depends_on:
+      - test-user-factory
+      - authentication
+      - events
+
+networks:
+  local_e2e_tests:
