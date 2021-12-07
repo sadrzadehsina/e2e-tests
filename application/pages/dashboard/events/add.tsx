@@ -17,7 +17,7 @@ const navigation = [
 const userNavigation = [
   { name: "Your Profile", href: "#" },
   { name: "Settings", href: "#" },
-  { name: "Sign out", href: "#" },
+  { name: "Sign out", href: "/" },
 ];
 
 function classNames(...classes) {
@@ -33,10 +33,17 @@ const AddEvent: NextPage = () => {
 
   const addEvent = async (event) => {
     event.preventDefault();
-    const response = await fetch("http://localhost:3000/add_event", {
-      title,
-      description,
-      address,
+    const response = await fetch("http://localhost:3000/api/add_event", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        title,
+        user: window.localStorage.getItem("user"),
+        description,
+        address,
+      }),
     });
 
     if (response.ok) {

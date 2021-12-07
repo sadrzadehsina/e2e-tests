@@ -7,8 +7,5 @@
     "authentication",
     "events",
     "test-user-factory"
-  ],
-  "dependencies": {
-    "faker": "^5.5.3"
-  }
+  ]
 }

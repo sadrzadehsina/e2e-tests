@@ -1,26 +1,23 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type Data = {
-  name: string;
+  success: boolean;
 };
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const { title, description, address } = req.body;
-
   const response = await fetch("http://localhost:3001/events", {
     method: "POST",
-    body: {
-      title,
-      description,
-      address,
+    headers: {
+      "Content-Type": "application/json",
     },
+    body: JSON.stringify(req.body),
   });
 
   if (response.ok) {
-    res.status(200);
+    res.status(200).json({ success: true });
   } else {
     res.status(500);
   }

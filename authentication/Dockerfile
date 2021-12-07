@@ -1,4 +1,4 @@
-from node:16
+from node:14
 
 WORKDIR /usr/src/app
 
@@ -9,8 +9,6 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources
 RUN apt-get update -qq && apt-get install -y yarn
 
 RUN yarn set version berry
-
-copy yarn.lock .yarn .yarnrc.yml ./
 
 RUN yarn install
 
