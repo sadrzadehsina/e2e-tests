@@ -1,6 +1,6 @@
 {
   "projectId": "j2nh8a",
-  "baseUrl": "http://localhost",
+  "baseUrl": "http://localhost:3000",
   "integrationFolder": "integration",
   "testFiles": "**/*.spec.ts",
   "pluginsFile": "plugins/index.js",
@@ -21,7 +21,7 @@
     "mobileViewportWidthBreakpoint": 414,
     "coverage": false,
     "codeCoverage": {
-      "url": "http://localhost/__coverage__"
+      "url": "http://localhost:3000/__coverage__"
     }
   },
   "experimentalStudio": true,

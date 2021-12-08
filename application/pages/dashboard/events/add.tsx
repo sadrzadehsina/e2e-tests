@@ -238,6 +238,7 @@ const AddEvent: NextPage = () => {
                         type="text"
                         name="title"
                         id="title"
+                        data-testId="event-title"
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                         onChange={(event) => setTitle(event.target.value)}
                       />
@@ -254,6 +255,7 @@ const AddEvent: NextPage = () => {
                         type="text"
                         name="description"
                         id="description"
+                        data-testId="event-description"
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                         onChange={(event) => setDescription(event.target.value)}
                       />
@@ -270,6 +272,7 @@ const AddEvent: NextPage = () => {
                         type="text"
                         name="address"
                         id="address"
+                        data-testId="event-address"
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                         onChange={(event) => setAddress(event.target.value)}
                       />
@@ -279,6 +282,7 @@ const AddEvent: NextPage = () => {
                 <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
                   <button
                     type="submit"
+                    data-testId="event-submit"
                     className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     onClick={addEvent}
                   >

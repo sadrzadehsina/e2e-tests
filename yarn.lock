@@ -3852,7 +3852,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"body-parser@npm:1.19.0":
+"body-parser@npm:1.19.0, body-parser@npm:^1.19.0":
   version: 1.19.0
   resolution: "body-parser@npm:1.19.0"
   dependencies:
@@ -6837,6 +6837,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "events@workspace:events"
   dependencies:
+    body-parser: ^1.19.0
     cors: ^2.8.5
     express: ^4.17.1
     faker: ^5.5.3
@@ -16758,6 +16759,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "test-user-factory@workspace:test-user-factory"
   dependencies:
+    axios: ^0.24.0
     cors: ^2.8.5
     express: ^4.17.1
     faker: ^5.5.3

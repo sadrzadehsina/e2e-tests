@@ -671,6 +671,7 @@ __metadata:
   dependencies:
     "@testing-library/cypress": ^8.0.2
     cypress: ^9.1.0
+    faker: ^5.5.3
     typescript: ^4.5.2
   languageName: unknown
   linkType: soft
@@ -785,6 +786,13 @@ __metadata:
   version: 1.4.1
   resolution: "extsprintf@npm:1.4.1"
   checksum: a2f29b241914a8d2bad64363de684821b6b1609d06ae68d5b539e4de6b28659715b5bea94a7265201603713b7027d35399d10b0548f09071c5513e65e8323d33
+  languageName: node
+  linkType: hard
+
+"faker@npm:^5.5.3":
+  version: 5.5.3
+  resolution: "faker@npm:5.5.3"
+  checksum: 684fd64c8d3897e54248f95b4f6319f75d97691b8500cd13adf4af2c28f9204f766c1d1aaa6b41338f0beaaa87256c3132f8708a1a8f189d122b92f6b98081c3
   languageName: node
   linkType: hard
 

@@ -25,10 +25,18 @@ app.get("/events", (req, res) => {
   );
 });
 
+const createInsertQuery = ({ user }) => {
+  if (user.startsWith("test_")) {
+    return "INSERT INTO events_for_test(id, user, title, description, address) VALUES(?, ?, ?, ?, ?)";
+  } else {
+    return "INSERT INTO events(id, user, title, description, address) VALUES(?, ?, ?, ?, ?)";
+  }
+};
+
 app.post("/events", (req, res) => {
   const user = req.body.user;
   db.run(
-    "INSERT INTO events(id, user, title, description, address) VALUES(?, ?, ?, ?, ?)",
+    createInsertQuery({ user }),
     [
       faker.datatype.number(100000),
       user,
